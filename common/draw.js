@@ -14,9 +14,12 @@ draw.path = (ctx, path, color='black') => {
 }
 
 draw.paths = (ctx, paths, color="black") => {
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     for(let path of paths) {
         draw.path(ctx, path, color);
     }
 }
 
-module.exports = draw;
+if(typeof module !== 'undefined') {
+    module.exports = draw;
+}
